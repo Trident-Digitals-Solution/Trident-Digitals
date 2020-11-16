@@ -7,8 +7,10 @@
 
 # firebase
 /.firebase
+.firebase
 .firebaserc
 firebase.json
+debug.log
 
 # testing
 /coverage
