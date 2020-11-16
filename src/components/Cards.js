@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
+import AOS from 'aos';
+import "aos/dist/aos.css"
 
 function Cards() {
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 })
+  }, [])
   return (
     <div className='cards'>
-      <h1>All In One Digital Marketing Solutions</h1>
-      <p>A community of owners, investors, creators and makers</p>
+      <h1 data-aos='fade-down'>All In One Digital Marketing Solutions</h1>
+      <p data-aos='fade-up'>A community of owners, investors, creators and makers</p>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
