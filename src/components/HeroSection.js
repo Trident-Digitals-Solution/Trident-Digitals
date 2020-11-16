@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Particles from 'react-tsparticles';
 import '../App.css';
 // import { Button } from './Button';
 import './HeroSection.css';
+import AOS from 'aos';
+import "aos/dist/aos.css"
 
 function HeroSection() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 })
+  }, [])
   return (
     <div className='hero-container'>
       <img src="images/MainBackground.jpg" alt="" />
@@ -32,10 +37,10 @@ function HeroSection() {
             },
             modes: {
               bubble: {
-                distance: 400,
+                distance: 200,
                 duration: 2,
-                opacity: 0.8,
-                size: 40,
+                opacity: 0.6,
+                size: 140,
               },
               push: {
                 quantity: 4,
@@ -52,9 +57,9 @@ function HeroSection() {
             },
             links: {
               color: "#ffffff",
-              distance: 150,
+              distance: 100,
               enable: true,
-              opacity: 0.5,
+              opacity: 0.6,
               width: 1,
             },
             collisions: {
@@ -65,15 +70,15 @@ function HeroSection() {
               enable: true,
               outMode: "bounce",
               random: true,
-              speed: 3,
-              straight: false,
+              speed: 1.5,
+              straight: true,
             },
             number: {
               density: {
                 enable: true,
-                value_area: 800,
+                value_area: 900,
               },
-              value: 200,
+              value: 100,
             },
             opacity: {
               value: 0.5,
@@ -83,7 +88,7 @@ function HeroSection() {
             },
             size: {
               random: true,
-              value: 5,
+              value: 3.5,
             },
           },
           detectRetina: true,
@@ -95,7 +100,7 @@ function HeroSection() {
       {/* <video src='videos/video-3.mp4' autoPlay loop muted /> */}
       {/* <h1>Trident Digitals</h1> */}
 
-      <h1 className="gradient-text">Welcome To Trident Digitals</h1>
+      <h1 data-aos='fade-down' className="gradient-text">Welcome To Trident Digitals</h1>
       {/* <p>What are you waiting for?</p> */}
       {/* <div className='hero-btns'>
         <Button

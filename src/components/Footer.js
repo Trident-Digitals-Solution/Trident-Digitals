@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Footer.css';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import "aos/dist/aos.css"
 
 function Footer() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 })
+  }, [])
   return (
     <div className='footer-container'>
       <section className='footer-subscription'>
-        <p className='footer-subscription-heading'>
+        <p data-aos='fade-down' className='footer-subscription-heading'>
           Subscribe the Trident Newsletter to receive our best deals
         </p>
-        <div className='input-areas'>
+        <div data-aos='zoom-in' className='input-areas'>
           <form>
             <input
               className='footer-input'
@@ -21,7 +26,7 @@ function Footer() {
             <Button buttonStyle='btn--outline'>Subscribe</Button>
           </form>
         </div>
-        <p className='footer-subscription-text'>
+        <p data-aos='fade-up' className='footer-subscription-text'>
           You can unsubscribe at any time.
         </p>
 
@@ -62,7 +67,7 @@ function Footer() {
           </div>
         </div>
       </div> */}
-      <section class='social-media'>
+      <section data-aos='zoom-in' class='social-media'>
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
